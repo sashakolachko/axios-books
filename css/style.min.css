@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap");
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none
+}
+
+body {
+  line-height: 1
+}
+
+ol, ul {
+  list-style: none
+}
+
+blockquote, q {
+  quotes: none
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none
+}
+
+:focus {
+  outline: 0
+}
+
+ins {
+  text-decoration: none
+}
+
+del {
+  text-decoration: line-through
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Quicksand", sans-serif
+}
+
+.container__item {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+.info-ul {
+  list-style-type: none;
+  padding: 0;
+  width: 200px
+}
+
+.add-form {
+  margin-bottom: 10px
+}
+
+.form-input {
+  width: 200px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif
+}
+
+.form-add-button {
+  width: 200px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  display: block;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Quicksand", sans-serif
+}
+
+.form-add-button:hover {
+  background-color: #45a049
+}
+
+.form-select {
+  width: 200px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif
+}
+
+.li-div {
+  padding: 5px;
+  box-sizing: border-box;
+  width: 200px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+
+.li-div__country {
+  font-weight: bold;
+  color: #2d2d2d
+}
+
+.li-div:hover {
+  background-color: #ededed;
+  border-radius: 5px;
+  color: #227726
+}
+
+.li-div:hover>.delete-button {
+  visibility: visible
+}
+
+.li-div:hover>.li-div__country {
+  color: #4CAF50
+}
+
+.delete-button {
+  height: 30px;
+  width: 80px;
+  margin: 0;
+  padding: 0;
+  visibility: hidden
+}
+
+.info-li__title {
+  font-size: 18px;
+  margin-top: 15px;
+  color: #10425f
+}
+
+.info-li__description {
+  margin-top: 3px
+}

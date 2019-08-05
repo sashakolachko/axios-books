@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/style.min.css">
+  <title>Library</title>
+</head>
+
+<body>
+  <main class="container">
+    <div class="container__item">
+      <form class="add-form">
+        <input id="country_name" class="form-input" placeholder="Country name" type="text">
+        <button id="addCountryBtn" class="form-add-button" type="button" name="button">ADD Country</button>
+      </form>
+      <ul id="countries" class="info-ul">
+      </ul>
+    </div>
+
+    <div class="container__item">
+      <form class="add-form">
+        <input id="author_name" class="form-input" placeholder="Author name" type="text">
+        <input id="author_bio" class="form-input" placeholder="Author bio" type="text">
+        <select id="country-select" class="form-select">
+          <option value="" selected disabled>Choose country</option>
+        </select>
+        <button id="addAuthorBtn" class="form-add-button" type="button" name="button">ADD Author</button>
+      </form>
+      <ul id="authors" class="info-ul">
+      </ul>
+    </div>
+
+    <div class="container__item">
+      <form class="add-form">
+        <input id="book_name" class="form-input" placeholder="Book name" type="text">
+        <input id="book_year" class="form-input" placeholder="Book year" type="text">
+        <input id="book_description" class="form-input" placeholder="Book description" type="text">
+        <select id="author-select" class="form-select">
+          <option value="" selected disabled>Choose author</option>
+        </select>
+        <button id="addBookBtn" class="form-add-button" type="button" name="button">ADD Book</button>
+      </form>
+      <ul id="books" class="info-ul">
+      </ul>
+    </div>
+
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js" charset="utf-8"></script>
+  <script src="js/script.js" charset="utf-8"></script>
+</body>
+
+</html>
