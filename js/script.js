@@ -1,6 +1,8 @@
 let showCountries = () => {
   let ul = document.getElementById('countries');
+  let select = document.getElementById('country-select');
   ul.innerHTML = "";
+  select.innerHTML = "";
   axios.get('http://localhost:8080/countries')
     .then(response => {
       for (country of response.data) {
