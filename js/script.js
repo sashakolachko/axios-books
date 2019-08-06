@@ -1,11 +1,15 @@
-axios.get('http://localhost:8080/countries')
-  .then(response => {
-    for (country of response.data) {
-      addCountryToDom(country);
-      fillCountrySelect(country);
-    }
-  })
-
+let showCountries = () => {
+  let ul = document.getElementById('countries');
+  ul.innerHTML = "";
+  axios.get('http://localhost:8080/countries')
+    .then(response => {
+      for (country of response.data) {
+        addCountryToDom(country);
+        fillCountrySelect(country);
+      }
+    })
+}
+showCountries();
 
 axios.get('http://localhost:8080/authors')
   .then(response => {
@@ -71,6 +75,7 @@ let addAuthorToDom = (author) => {
 }
 
 let addCountryToDom = (country) => {
+  let countryID = country.id;
   let ul = document.getElementById('countries');
   let li = document.createElement('li');
   li.className = "info-li";
@@ -79,17 +84,52 @@ let addCountryToDom = (country) => {
   lidiv.className = "li-div";
   lip.innerText = country.name;
   lip.className = "li-div__country";
+  let updateDiv = document.createElement('div');
+  updateDiv.className = "update-container";
+  let countryName = document.createElement('input');
+  countryName.value = country.name;
+  countryName.className = "form-input";
+  countryName.id = `newname-${country.id}`;
+
   let deleteBtn = document.createElement('button');
+  let updateBtn = document.createElement('button');
+  let saveBtn = document.createElement('button');
+  saveBtn.className = "form-add-button";
   deleteBtn.innerText = "Delete";
-  deleteBtn.onclick = function() {
+  updateBtn.innerText = "Update";
+  saveBtn.innerText = "Save changes";
+  updateDiv.appendChild(countryName);
+  updateDiv.appendChild(saveBtn);
+  updateDiv.id = `updatediv-${country.id}`;
+
+  deleteBtn.onclick = () => {
     axios.delete(`http://localhost:8080/countries/${country.id}`)
-      .then(reload => window.location.reload())
+      .then(reload => showCountries())
       .catch(err => alert("Something went wrong"));
   };
+  updateBtn.onclick = () => {
+    let updateDiv = document.getElementById(`updatediv-${country.id}`);
+    updateDiv.style.display = "block";
+  };
+  saveBtn.onclick = () => {
+    let newCountryName = document.getElementById(`newname-${country.id}`).value;
+    axios.patch(`http://localhost:8080/countries/${country.id}`, {
+        name: newCountryName
+      })
+      .then(showNewList => {
+        let updateDiv = document.getElementById(`updatediv-${country.id}`);
+        updateDiv.style.display = "none";
+        showCountries();
+      });
+  };
+
   deleteBtn.className = "delete-button form-add-button";
+  updateBtn.className = "delete-button form-add-button";
   lidiv.appendChild(lip);
   lidiv.appendChild(deleteBtn);
+  lidiv.appendChild(updateBtn);
   li.appendChild(lidiv);
+  li.appendChild(updateDiv);
   ul.appendChild(li);
 }
 

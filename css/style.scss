@@ -19,7 +19,7 @@ $main-font: 'Quicksand', sans-serif;
 .info-ul {
   list-style-type: none;
   padding: 0;
-  width: 200px;
+  width: 300px;
 }
 
 .add-form {
@@ -27,7 +27,7 @@ $main-font: 'Quicksand', sans-serif;
 }
 
 .form-input {
-  width: 200px;
+  width: 300px;
   padding: 12px 20px;
   margin: 8px 0;
   display: block;
@@ -38,7 +38,7 @@ $main-font: 'Quicksand', sans-serif;
 }
 
 .form-add-button {
-  width: 200px;
+  width: 300px;
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
@@ -55,7 +55,7 @@ $main-font: 'Quicksand', sans-serif;
 }
 
 .form-select {
-  width: 200px;
+  width: 300px;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -68,7 +68,7 @@ $main-font: 'Quicksand', sans-serif;
 .li-div {
   padding: 5px;
   box-sizing: border-box;
-  width: 200px;
+  width: 300px;
   height: 50px;
   display: flex;
   justify-content: space-between;
@@ -112,4 +112,8 @@ $main-font: 'Quicksand', sans-serif;
   &__description {
     margin-top: 3px;
   }
+}
+
+.update-container {
+  display: none;
 }
